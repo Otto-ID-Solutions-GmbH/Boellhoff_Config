@@ -158,36 +158,6 @@ function investmentNumberValidation(input) {
   inputHandler(pattern, input.value, 1, 6, errorMessage, example);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("configForm");
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Collect form data
-    let address;
-    const formData = new FormData(form);
-    const config = {};
-    formData.forEach((value, key) => {
-      if (key == "selectEmail") {
-        address = getAddressForEmail(value);
-        return;
-      }
-      if (value == "TRUE" || value == "FALSE") {
-        value = value === "TRUE";
-      }
-      config[key] = value;
-    });
-
-    const configJSON = JSON.stringify(config, null, 2);
-
-
-    const params = {
-      message: configJSON + "\n\n Address :" + address,
-    };
-    console.log(configJSON);
-  });
-});
-
 function getAddressForEmail(email) {
   const addressEntry = Addresses.find((entry) => entry.email === email);
   return addressEntry ? addressEntry.address : "";

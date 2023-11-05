@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Configuration Form</h1>
-        <form id="configForm">
+        <form action="http://localhost:3000/submit" method="post" id="configForm">
             <!-- new -->
             <div class="inline-select">
                 <label for="Device-Type">Device-Type : </label>
@@ -28,14 +28,14 @@
             <div id="error-message_customer" class="error-message" style="display: none;"></div>
 
             <label for="customerName">Customer Name </label>
-            <input type="text" id="customerName" name="customerName" pattern="[A-Za-z0-9]*" maxlength="20" required>
+            <input type="text" id="customerName" name="customerName" pattern="[A-Za-z0-9]*" maxlength="20" >
 
             <label for="stationNumber">Station Number </label>
-            <input type="number" id="stationNumber" name="stationNumber" value=10 max="9999" required>
+            <input type="number" id="stationNumber" name="stationNumber" value=10 max="9999" >
 
             <label for="address">Address </label>
-            <input type="text" id="address" name="address" pattern="[A-Za-z0-9]*" maxlength="40" required>
-            <!-- <input type="text" id="address" name="address" required > -->
+            <input type="text" id="address" name="address" pattern="[A-Za-z0-9]*" maxlength="40" >
+            <!-- <input type="text" id="address" name="address"  > -->
             <!-- new -->
             <div class="inline-select">
                 <label for="Sales-Unit">Sales-Unit : </label>
@@ -58,35 +58,35 @@
             </div>
             <!-- new -->
             <label for="teamviewer_alies">Alies for TeamViewer </label>
-            <input type="text" id="teamviewer_alies" name="teamviewer_alies" required>
+            <input type="text" id="teamviewer_alies" name="teamviewer_alies" >
 
 
             <label for="final_cost_center">Final Cost Center </label>
-            <input type="number" id="final_cost_center" name="final_cost_center" max="99999" required>
+            <input type="number" id="final_cost_center" name="final_cost_center" max="99999" >
 
 
             <label for="final_investment_number">Final Investment number </label>
             <input type="text" id="final_investment_number" name="final_investment_number"
-                oninput="investmentNumberValidation(this)" required maxlength="7">
+                oninput="investmentNumberValidation(this)"  maxlength="7">
             <div id="error-message_investment" class="error-message" style="display: none;"></div>
 
 
             <label for="login_email">Ecoportal E-Mail </label>
-            <input type="email" id="login_email" name="login_email" required value="demo@boellhoff.com">
+            <input type="email" id="login_email" name="login_email"  value="demo@boellhoff.com">
 
             <label for="login_pass">Ecoportal Password </label>
-            <input type="password" id="login_pass" name="login_pass" required value="a!b2c3D4">
+            <input type="password" id="login_pass" name="login_pass"  value="a!b2c3D4">
 
             <label for="openOrdersLink">Open Orders</label>
-            <input type="url" id="openOrdersLink" name="openOrdersLink" required
+            <input type="url" id="openOrdersLink" name="openOrdersLink" 
                 value="https://ecoportal.boellhoff.com/reporting/open_orders">
 
             <label for="articleFinderLink">Article Finder </label>
-            <input type="url" id="articleFinderLink" name="articleFinderLink" required
+            <input type="url" id="articleFinderLink" name="articleFinderLink" 
                 value="https://ecoportal.boellhoff.com/reporting/actual_container">
 
             <label for="tutorialLink">Tutorial Link </label>
-            <input type="url" id="tutorialLink" name="tutorialLink" required
+            <input type="url" id="tutorialLink" name="tutorialLink" 
                 value="https://vimeo.com/814648271/f1e2928b55">
 
 
@@ -208,8 +208,8 @@
             </div>
 
             <div id="timeWrapper">
-                <label for="time">Time :</label>
-                <input value="00:00:00" id="time" name="time" type="time" step="1">
+                <label for="sendingTime">Time :</label>
+                <input value="00:00:00" id="time" name="sendingTime" type="time" step="1">
             </div>
 
             <div id="secondsWrapper">
@@ -218,8 +218,8 @@
             </div>
 
             <div class="inline-select">
-                <label for="antenna">Antenna :</label>
-                <select id="antenna" name="antenna">
+                <label for="internalAntenna">Antenna :</label>
+                <select id="antenna" name="internalAntenna">
                     <option value="TRUE">Internal</option>
                     <option value="FALSE">Shelf - Ground</option>
                 </select>
@@ -283,8 +283,8 @@
             <label for="blockingTime">Blocking Time</label>
             <input type="number" id="blockingTime" name="blockingTime" max="9999999999">
 
-            <label for="productKey">Product Key :</label>
-            <input type="text" id="productKey" name="productKey" value="FFFF-FFFF-FFFF">
+            <label for="key">Product Key :</label>
+            <input type="text" id="key" name="key" value="FFFF-FFFF-FFFF">
             <div class="inline-select">
                 <label for="address">Select Email: </label>
                 <select id="selectEmail" name="selectEmail">
