@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Configuration Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Configuration Form</h1>
+        <form id="configForm">
+            <!-- new -->
+            <div class="inline-select">
+                <label for="Device-Type">Device-Type : </label>
+                <select id="Device-Type" name="Device-Type">
+                    <option value="Eco-Flexible">Eco-Flexible</option>
+                    <option value="Eco-Mobile">Eco-Mobile</option>
+                    <option value="Eco-Ultimate">Eco-Ultimate</option>
+                </select>
+            </div>
+
+            <label for="customerNumber">Customer Number </label>
+            <input type="text" id="customerNumber" name="customerNumber" pattern="[A-Za-z]{3}[0-9]{7}" maxlength="10"
+                oninput="customerNumberValidation(this)">
+            <div id="error-message_customer" class="error-message" style="display: none;"></div>
+
+            <label for="customerName">Customer Name </label>
+            <input type="text" id="customerName" name="customerName" pattern="[A-Za-z0-9]*" maxlength="20" required>
+
+            <label for="stationNumber">Station Number </label>
+            <input type="number" id="stationNumber" name="stationNumber" value=10 max="9999" required>
+
+            <label for="address">Address </label>
+            <input type="text" id="address" name="address" pattern="[A-Za-z0-9]*" maxlength="40" required>
+            <!-- <input type="text" id="address" name="address" required > -->
+            <!-- new -->
+            <div class="inline-select">
+                <label for="Sales-Unit">Sales-Unit : </label>
+                <select id="Sales-Unit" name="Sales-Unit">
+                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value="D10">D10</option>
+                    <option value="D15">D15</option>
+                    <option value="D30">D30</option>
+                    <option value="D70">D70</option>
+                    <option value="D73">D73</option>
+                    <option value="DW1">DW1</option>
+                    <option value="A72">A72</option>
+                    <option value="A73">A73</option>
+                    <option value="A74">A74</option>
+                    <option value="A75">A75</option>
+                    <option value="A77">A77</option>
+                    <option value="CZ1">CZ1</option>
+                    <option value="HU1">HU1</option>
+                </select>
+            </div>
+            <!-- new -->
+            <label for="teamviewer_alies">Alies for TeamViewer </label>
+            <input type="text" id="teamviewer_alies" name="teamviewer_alies" required>
+
+
+            <label for="final_cost_center">Final Cost Center </label>
+            <input type="number" id="final_cost_center" name="final_cost_center" max="99999" required>
+
+
+            <label for="final_investment_number">Final Investment number </label>
+            <input type="text" id="final_investment_number" name="final_investment_number"
+                oninput="investmentNumberValidation(this)" required maxlength="7">
+            <div id="error-message_investment" class="error-message" style="display: none;"></div>
+
+
+            <label for="login_email">Ecoportal E-Mail </label>
+            <input type="email" id="login_email" name="login_email" required value="demo@boellhoff.com">
+
+            <label for="login_pass">Ecoportal Password </label>
+            <input type="password" id="login_pass" name="login_pass" required value="a!b2c3D4">
+
+            <label for="openOrdersLink">Open Orders</label>
+            <input type="url" id="openOrdersLink" name="openOrdersLink" required
+                value="https://ecoportal.boellhoff.com/reporting/open_orders">
+
+            <label for="articleFinderLink">Article Finder </label>
+            <input type="url" id="articleFinderLink" name="articleFinderLink" required
+                value="https://ecoportal.boellhoff.com/reporting/actual_container">
+
+            <label for="tutorialLink">Tutorial Link </label>
+            <input type="url" id="tutorialLink" name="tutorialLink" required
+                value="https://vimeo.com/814648271/f1e2928b55">
+
+
+            <div class="inline-select">
+                <label for="epcDependent">EPC-Dependent :</label>
+                <select id="epcDependent" name="epcDependent">
+                    <option value="TRUE">On</option>
+                    <option value="FALSE">Off</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+                <label for="orderTransfer">Order Transfer :</label>
+                <select id="orderTransfer" name="orderTransfer">
+                    <option value="TRUE">AUTOMATIC</option>
+                    <option value="FALSE">MANUAL</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+                <label for="transferOptionSummarized">Transfer Option :</label>
+                <select id="transferOptionSummarized" name="transferOptionSummarized">
+                    <option value="FALSE">Single</option>
+                    <option value="TRUE">Summarized</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+                <label for="married">System Option :</label>
+                <select id="married" name="married">
+                    <option value="FALSE">Unmarried</option>
+                    <option value="TRUE">Married</option>
+                </select>
+            </div>
+            <div class="inline-select">
+
+                <label for="inventoryFunctionality">Inventory Option :</label>
+                <select id="inventoryFunctionality" name="inventoryFunctionality">
+                    <option value="FALSE">Off</option>
+                    <option value="TRUE">On</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+
+                <label for="bluetooth">Bluetooth :</label>
+                <select id="bluetooth" name="bluetooth">
+                    <option value="FALSE">Off</option>
+                    <option value="TRUE">On</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+                <label for="usb">USB :</label>
+                <select id="usb" name="usb">
+                    <option value="FALSE">Off</option>
+                    <option value="TRUE">On</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+
+                <label for="landscape">Landscape :</label>
+                <select id="landscape" name="landscape">
+                    <option value="FALSE">Off</option>
+                    <option value="TRUE">On</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+                <label for="sendingMethod">Sending Method :</label>
+                <select id="sendingMethod" name="sendingMethod">
+                    <option value="Instant">Instantly</option>
+                    <option value="Periodic">Periodic</option>
+                    <option value="Trigger">Trigger</option>
+                </select>
+            </div>
+
+            <div class="days-checkbox-group" id="daysWrapper">
+                <label>Days of the Week :</label>
+                <div class="days-row">
+                    <label>
+                        <input type="hidden" name="sendingOnMonday" value="FALSE" />
+                        <input type="checkbox" name="sendingOnMonday" value="TRUE">
+                        Monday
+                    </label>
+                    <label>
+                        <input type="hidden" name="sendingOnTuesday" value="FALSE" />
+                        <input type="checkbox" name="sendingOnTuesday" value="TRUE">
+                        Tuesday
+                    </label>
+                    <label>
+                        <input type="hidden" name="sendingOnWednesday" value="FALSE" />
+                        <input type="checkbox" name="sendingOnWednesday" value="TRUE">
+                        Wednesday
+                    </label>
+
+                    <label>
+                        <input type="hidden" name="sendingOnThursday" value="FALSE" />
+                        <input type="checkbox" name="sendingOnThursday" value="TRUE">
+                        Thursday
+                    </label>
+                    <label>
+                        <input type="hidden" name="sendingOnFriday" value="FALSE" />
+                        <input type="checkbox" name="sendingOnFriday" value="TRUE">
+                        Friday
+                    </label>
+                    <label>
+                        <input type="hidden" name="sendingOnSaturday" value="FALSE" />
+                        <input type="checkbox" name="sendingOnSaturday" value="TRUE">
+                        Saturday
+                    </label>
+                    <label>
+                        <input type="hidden" name="sendingOnSunday" value="FALSE" />
+                        <input type="checkbox" name="sendingOnSunday" value="TRUE">
+                        Sunday
+                    </label>
+                </div>
+            </div>
+
+            <div id="timeWrapper">
+                <label for="time">Time :</label>
+                <input value="00:00:00" id="time" name="time" type="time" step="1">
+            </div>
+
+            <div id="secondsWrapper">
+                <label for="seconds">Seconds :</label>
+                <input type="number" id="seconds" name="seconds" min="0" max="9999999">
+            </div>
+
+            <div class="inline-select">
+                <label for="antenna">Antenna :</label>
+                <select id="antenna" name="antenna">
+                    <option value="TRUE">Internal</option>
+                    <option value="FALSE">Shelf - Ground</option>
+                </select>
+            </div>
+
+            <label for="floorScan1200x800">FloorScan 1200x800</label>
+            <input type="number" id="floorScan1200x800" name="floorScan1200x800" max="99">
+
+            <label for="floorScan800x600">FloorScan 800x600</label>
+            <input type="number" id="floorScan800x600" name="floorScan800x600" max="99">
+
+            <label for="shelfScan">ShelfScan</label>
+            <input type="number" id="shelfScan" name="shelfScan" max="99">
+
+            <label for="labelScan">LabelScan</label>
+            <input type="number" id="labelScan" name="labelScan" max="99">
+
+            <div id="powerChargerWrapper">
+                <label for="powerCharger">Power Charger</label>
+                <input type="number" id="powerCharger" name="powerCharger" max="99">
+            </div>
+
+            <div id="tAdapterWrapper">
+                <label for="tAdapter">T-Adapter</label>
+                <input type="number" id="tAdapter" name="tAdapter" max="99">
+            </div>
+
+            <div id="extensionCable15mWrapper">
+                <label for="extensionCable15m">Extention cable 1,5m</label>
+                <input type="number" id="extensionCable15m" name="extensionCable15m" max="99">
+            </div>
+
+            <div id="extensionCable3mWrapper">
+                <label for="extensionCable3m">Extention cable 3m</label>
+                <input type="number" id="extensionCable3m" name="extensionCable3m" max="99">
+            </div>
+            
+
+            <label for="pin">PIN :</label>
+            <input type="number" id="pin" name="pin" max="99999999" value="33649">
+
+            <label for="dbm">dbm :</label>
+            <input type="number" id="dbm" name="dbm" placeholder="10 - 30" min="10" max="30">
+
+            <div class="inline-select">
+                <label for="deleteFunction">Delete Function :</label>
+                <select id="deleteFunction" name="deleteFunction">
+                    <option value="TRUE">On</option>
+                    <option value="FALSE">Off</option>
+                </select>
+            </div>
+
+            <div class="inline-select">
+                <label for="engel">Engel :</label>
+                <select id="engel" name="engel">
+                    <option value="TRUE">On</option>
+                    <option value="FALSE">Off</option>
+                </select>
+            </div>
+
+            <label for="blockingTime">Blocking Time</label>
+            <input type="number" id="blockingTime" name="blockingTime" max="9999999999">
+
+            <label for="productKey">Product Key :</label>
+            <input type="text" id="productKey" name="productKey" value="FFFF-FFFF-FFFF">
+            <div class="inline-select">
+                <label for="address">Select Email: </label>
+                <select id="selectEmail" name="selectEmail">
+                    <option disabled selected value> -- select an option -- </option>
+                    <option value="hrehm@boellhoff.com">hrehm@boellhoff.com</option>
+                    <option value="mbischiff@boellhoff.com">mbischiff@boellhoff.com</option>
+                    <option value="shutzler@boellhoff.com">shutzler@boellhoff.com</option>
+                    <option value="mimbach@boellhoff.com">mimbach@boellhoff.com</option>
+                    <option value="funtersmeier@boellhoff.com">funtersmeier@boellhoff.com</option>
+                    <option value="sgrünwald@boellhoff.com">sgrünwald@boellhoff.com</option>
+                    <option value="apeter@boellhoff.com">apeter@boellhoff.com</option>
+                    <option value="hboer@boellhoff.com">hboer@boellhoff.com</option>
+                    <option value="mfabian@boellhoff.com">mfabian@boellhoff.com</option>
+                    <option value="a.goeppel@schrauben-engel.de">a.goeppel@schrauben-engel.de</option>
+                    <option value="mgrassy@boellhoff.com">mgrassy@boellhoff.com</option>
+                </select>
+            </div>
+
+            <button type="submit">Generate Configuration</button>
+    </div>
+
+
+
+
+    </form>
+    </div>
+    <script>
+
+
+    </script>
+    <script src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"> </script>
