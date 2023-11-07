@@ -4,14 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.3">
     <title>Configuration Form</title>
+    <link rel="icon" href="https://otto-id.com/wp-content/uploads/2021/07/cropped-favicon-150x150.png" sizes="32x32" />
+    <link rel="icon" href="https://otto-id.com/wp-content/uploads/2021/07/cropped-favicon-300x300.png"
+        sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://otto-id.com/wp-content/uploads/2021/07/cropped-favicon-300x300.png" />
+
 </head>
 
 <body>
     <div class="container">
         <h1>Configuration Form</h1>
-        <form action="http://localhost:3000/submit" method="post" id="configForm">
+        <form action="http://89.58.25.240:3030/submit" method="post" id="configForm">
             <!-- new -->
             <div class="inline-select">
                 <label for="Device-Type">Device-Type : </label>
@@ -22,19 +27,19 @@
                 </select>
             </div>
 
-            <label for="customerNumber">Customer Number </label>
+            <label class="required" for="customerNumber">Customer Number </label>
             <input type="text" id="customerNumber" name="customerNumber" pattern="[A-Za-z]{3}[0-9]{7}" maxlength="10"
-                oninput="customerNumberValidation(this)">
+                oninput="customerNumberValidation(this)" required>
             <div id="error-message_customer" class="error-message" style="display: none;"></div>
 
-            <label for="customerName">Customer Name </label>
-            <input type="text" id="customerName" name="customerName" pattern="[A-Za-z0-9]*" maxlength="20" >
+            <label class="required" for="customerName">Customer Name </label>
+            <input type="text" id="customerName" name="customerName" pattern="[A-Za-z0-9]*" maxlength="20" required>
 
-            <label for="stationNumber">Station Number </label>
-            <input type="number" id="stationNumber" name="stationNumber" value=10 max="9999" >
+            <label class="required" for="stationNumber">Station Number </label>
+            <input type="number" id="stationNumber" name="stationNumber" value=10 max="9999" required>
 
-            <label for="address">Address </label>
-            <input type="text" id="address" name="address" pattern="[A-Za-z0-9]*" maxlength="40" >
+            <label class="required" for="address">Address </label>
+            <input type="text" id="address" name="address" pattern="[A-Za-z0-9]*" maxlength="40" required>
             <!-- <input type="text" id="address" name="address"  > -->
             <!-- new -->
             <div class="inline-select">
@@ -58,73 +63,73 @@
             </div>
             <!-- new -->
             <label for="teamviewer_alies">Alies for TeamViewer </label>
-            <input type="text" id="teamviewer_alies" name="teamviewer_alies" >
+            <input type="text" id="teamviewer_alies" name="teamviewer_alies">
 
 
             <label for="final_cost_center">Final Cost Center </label>
-            <input type="number" id="final_cost_center" name="final_cost_center" max="99999" >
+            <input type="number" id="final_cost_center" name="final_cost_center" max="99999">
 
 
             <label for="final_investment_number">Final Investment number </label>
             <input type="text" id="final_investment_number" name="final_investment_number"
-                oninput="investmentNumberValidation(this)"  maxlength="7">
+                oninput="investmentNumberValidation(this)" maxlength="7">
             <div id="error-message_investment" class="error-message" style="display: none;"></div>
 
 
-            <label for="login_email">Ecoportal E-Mail </label>
-            <input type="email" id="login_email" name="login_email"  value="demo@boellhoff.com">
+            <label class="required" for="login_email">Ecoportal E-Mail </label>
+            <input type="email" id="login_email" name="login_email" value="demo@boellhoff.com" required>
 
-            <label for="login_pass">Ecoportal Password </label>
-            <input type="password" id="login_pass" name="login_pass"  value="a!b2c3D4">
+            <label class="required" for="login_pass">Ecoportal Password </label>
+            <input type="password" id="login_pass" name="login_pass" value="a!b2c3D4" required>
 
-            <label for="openOrdersLink">Open Orders</label>
-            <input type="url" id="openOrdersLink" name="openOrdersLink" 
-                value="https://ecoportal.boellhoff.com/reporting/open_orders">
+            <label class="required" for="openOrdersLink">Open Orders</label>
+            <input type="url" id="openOrdersLink" name="openOrdersLink"
+                value="https://ecoportal.boellhoff.com/reporting/open_orders" required>
 
-            <label for="articleFinderLink">Article Finder </label>
-            <input type="url" id="articleFinderLink" name="articleFinderLink" 
-                value="https://ecoportal.boellhoff.com/reporting/actual_container">
+            <label class="required" for="articleFinderLink">Article Finder </label>
+            <input type="url" id="articleFinderLink" name="articleFinderLink"
+                value="https://ecoportal.boellhoff.com/reporting/actual_container" required>
 
-            <label for="tutorialLink">Tutorial Link </label>
-            <input type="url" id="tutorialLink" name="tutorialLink" 
-                value="https://vimeo.com/814648271/f1e2928b55">
+            <label class="required" for="tutorialLink">Tutorial Link </label>
+            <input type="url" id="tutorialLink" name="tutorialLink" value="https://vimeo.com/814648271/f1e2928b55"
+                required>
 
 
             <div class="inline-select">
-                <label for="epcDependent">EPC-Dependent :</label>
-                <select id="epcDependent" name="epcDependent">
+                <label class="required" for="epcDependent">EPC-Dependent :</label>
+                <select id="epcDependent" name="epcDependent" required>
                     <option value="TRUE">On</option>
                     <option value="FALSE">Off</option>
                 </select>
             </div>
 
             <div class="inline-select">
-                <label for="orderTransfer">Order Transfer :</label>
-                <select id="orderTransfer" name="orderTransfer">
+                <label class="required" for="orderTransfer">Order Transfer :</label>
+                <select id="orderTransfer" name="orderTransfer" required>
                     <option value="TRUE">AUTOMATIC</option>
                     <option value="FALSE">MANUAL</option>
                 </select>
             </div>
 
             <div class="inline-select">
-                <label for="transferOptionSummarized">Transfer Option :</label>
-                <select id="transferOptionSummarized" name="transferOptionSummarized">
+                <label class="required" for="transferOptionSummarized">Transfer Option :</label>
+                <select id="transferOptionSummarized" name="transferOptionSummarized" required>
                     <option value="FALSE">Single</option>
                     <option value="TRUE">Summarized</option>
                 </select>
             </div>
 
             <div class="inline-select">
-                <label for="married">System Option :</label>
-                <select id="married" name="married">
+                <label class="required" for="married">System Option :</label>
+                <select id="married" name="married" required>
                     <option value="FALSE">Unmarried</option>
                     <option value="TRUE">Married</option>
                 </select>
             </div>
             <div class="inline-select">
 
-                <label for="inventoryFunctionality">Inventory Option :</label>
-                <select id="inventoryFunctionality" name="inventoryFunctionality">
+                <label class="required" for="inventoryFunctionality">Inventory Option :</label>
+                <select id="inventoryFunctionality" name="inventoryFunctionality" required>
                     <option value="FALSE">Off</option>
                     <option value="TRUE">On</option>
                 </select>
@@ -132,16 +137,16 @@
 
             <div class="inline-select">
 
-                <label for="bluetooth">Bluetooth :</label>
-                <select id="bluetooth" name="bluetooth">
+                <label class="required" for="bluetooth">Bluetooth :</label>
+                <select id="bluetooth" name="bluetooth" required>
                     <option value="FALSE">Off</option>
                     <option value="TRUE">On</option>
                 </select>
             </div>
 
             <div class="inline-select">
-                <label for="usb">USB :</label>
-                <select id="usb" name="usb">
+                <label class="required" for="usb">USB :</label>
+                <select id="usb" name="usb" required>
                     <option value="FALSE">Off</option>
                     <option value="TRUE">On</option>
                 </select>
@@ -149,24 +154,24 @@
 
             <div class="inline-select">
 
-                <label for="landscape">Landscape :</label>
-                <select id="landscape" name="landscape">
+                <label class="required" for="landscape">Landscape :</label>
+                <select id="landscape" name="landscape" required>
                     <option value="FALSE">Off</option>
                     <option value="TRUE">On</option>
                 </select>
             </div>
 
             <div class="inline-select">
-                <label for="sendingMethod">Sending Method :</label>
-                <select id="sendingMethod" name="sendingMethod">
-                    <option value="Instant">Instantly</option>
+                <label class="required" for="sendingMethod">Sending Method :</label>
+                <select id="sendingMethod" name="sendingMethod" required>
+                    <option value="Instantly">Instantly</option>
                     <option value="Periodic">Periodic</option>
                     <option value="Trigger">Trigger</option>
                 </select>
             </div>
 
             <div class="days-checkbox-group" id="daysWrapper">
-                <label>Days of the Week :</label>
+                <label id="daysLable">Days of the Week :</label>
                 <div class="days-row">
                     <label>
                         <input type="hidden" name="sendingOnMonday" value="FALSE" />
@@ -208,17 +213,17 @@
             </div>
 
             <div id="timeWrapper">
-                <label for="sendingTime">Time :</label>
+                <label id="timeLable" for="sendingTime">Time :</label>
                 <input value="00:00:00" id="time" name="sendingTime" type="time" step="1">
             </div>
 
             <div id="secondsWrapper">
-                <label for="seconds">Seconds :</label>
+                <label id="secondsLable" for="seconds">Seconds :</label>
                 <input type="number" id="seconds" name="seconds" min="0" max="9999999">
             </div>
 
             <div class="inline-select">
-                <label for="internalAntenna">Antenna :</label>
+                <label class="required" for="internalAntenna">Antenna :</label>
                 <select id="antenna" name="internalAntenna">
                     <option value="TRUE">Internal</option>
                     <option value="FALSE">Shelf - Ground</option>
@@ -256,38 +261,40 @@
                 <label for="extensionCable3m">Extention cable 3m</label>
                 <input type="number" id="extensionCable3m" name="extensionCable3m" max="99">
             </div>
-            
 
-            <label for="pin">PIN :</label>
-            <input type="number" id="pin" name="pin" max="99999999" value="33649">
 
-            <label for="dbm">dbm :</label>
-            <input type="number" id="dbm" name="dbm" placeholder="10 - 30" min="10" max="30">
+            <label class="required" for="pin">PIN :</label>
+            <input type="number" id="pin" name="pin" max="99999999" value="33649" required>
+
+            <label class="required" for="dbm">dbm :</label>
+            <input type="number" id="dbm" name="dbm" min="10" max="30" required>
 
             <div class="inline-select">
-                <label for="deleteFunction">Delete Function :</label>
-                <select id="deleteFunction" name="deleteFunction">
+                <label class="required" for="deleteFunction">Delete Function :</label>
+                <select id="deleteFunction" name="deleteFunction" required>
                     <option value="TRUE">On</option>
                     <option value="FALSE">Off</option>
                 </select>
             </div>
 
             <div class="inline-select">
-                <label for="engel">Engel :</label>
-                <select id="engel" name="engel">
+                <label class="required" for="engel">Engel :</label>
+                <select id="engel" name="engel" required>
                     <option value="TRUE">On</option>
                     <option value="FALSE">Off</option>
                 </select>
             </div>
 
-            <label for="blockingTime">Blocking Time</label>
-            <input type="number" id="blockingTime" name="blockingTime" max="9999999999">
 
-            <label for="key">Product Key :</label>
-            <input type="text" id="key" name="key" value="FFFF-FFFF-FFFF">
+            <div id="blockingTimeWrapper">
+                <label class="required" id="blockingTimeLable" for="blockingTime">Blocking Time</label>
+                <input type="number" id="blockingTime" name="blockingTime" max="9999999999" value="604800">
+            </div>
+            <label class="required" for="key">Product Key :</label>
+            <input type="text" id="key" name="key" value="FFFF-FFFF-FFFF" required>
             <div class="inline-select">
-                <label for="address">Select Email: </label>
-                <select id="selectEmail" name="selectEmail">
+                <label class="required" for="address">Select Email: </label>
+                <select id="selectEmail" name="selectEmail" required>
                     <option disabled selected value> -- select an option -- </option>
                     <option value="hrehm@boellhoff.com">hrehm@boellhoff.com</option>
                     <option value="mbischiff@boellhoff.com">mbischiff@boellhoff.com</option>
@@ -315,5 +322,5 @@
 
 
     </script>
-    <script src="index.js"></script>
+    <script src="script.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"> </script>

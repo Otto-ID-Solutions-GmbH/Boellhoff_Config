@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 3000;
+const port = 3030;
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 
@@ -21,7 +21,6 @@ const notInJSON = [
   "tAdapter",
   "extensionCable15m",
   "extensionCable3m",
-  "blockingTime",
 ];
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -45,9 +44,7 @@ app.post("/submit", (req, res) => {
   //Filter the data
   for (const [key, value] of Object.entries(req.body)) {
     if (notInJSON.includes(key)) {
-        console.log(value,key);
       jsonforText[key] = value ? value : "";
-      console.log(value);
     } else {
       jsonforAttachment[key] = value ? value :"";
     }
@@ -64,7 +61,7 @@ Please find the attached and following data.\n\
 Have a great day!😊`,
     attachments: [
       {
-        filename: "data.json", 
+        filename: "boell.json", 
         content: JSON.stringify(jsonforAttachment,null,2), 
       },
     ],

@@ -70,6 +70,10 @@ button[type="submit"]:hover {
   flex-wrap: wrap;
 }
 
+.required:after {
+  content: " *";
+  color: red;
+}
 /* .days-checkbox-group {
     display: flex;
     flex-direction: column;
@@ -97,6 +101,15 @@ button[type="submit"]:hover {
 }
 #daysWrapper,
 #timeWrapper,
-#secondsWrapper{
+#secondsWrapper,
+#powerChargerWrapper,
+#tAdapterWrapper,
+#extensionCable15mWrapper,
+#extensionCable3mWrapper{
   display: none;
+}
+
+.required:after {
+  content: " *";
+  color: red;
 }
